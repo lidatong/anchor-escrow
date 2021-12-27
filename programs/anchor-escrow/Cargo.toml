@@ -1,0 +1,27 @@
+[package]
+name = "anchor-escrow"
+version = "0.1.0"
+description = "Created with Anchor"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "anchor_escrow"
+doctest = false
+
+[features]
+default = []
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+test-bpf = []
+
+[dependencies]
+anchor-lang = "0.19.0"
+anchor-spl = "0.19.0"
+spl-token = { version = "3.2.0", features = ["no-entrypoint"] }
+
+[dev-dependencies]
+anchor-client = { version = "0.19.0", features = ["debug"] }
+solana-program-test = "1.8.0"
